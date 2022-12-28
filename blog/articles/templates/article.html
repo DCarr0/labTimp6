@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../static/article.css" />
+	<title>Document</title>
+</head>
+<body class="article">
+
+	<header class="header">
+			<img src="../static/1-4.png" alt="#" class="image">
+	</header>
+
+	<main class="main">
+		
+	<section class="main-post">
+
+			<p class="post-link"><a href="http://127.0.0.1:8000/article">Все статьи</a></p>
+
+			<h1 class="post-title">{{ post.title }}</h1>
+
+			<div class="post-about">
+
+				<div class="about-author">
+					{{ post.author.username }}
+				</div>
+
+				<div class="about-date">
+					{{ post.created_date }}
+				</div>
+
+			</div>
+
+			<div class="post-text">
+				<p class="text-article">{{ post.text }}</p>
+			</div>
+			
+		</section>
+
+	</main>
+</body>
+</html>

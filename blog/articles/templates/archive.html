@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/article.css" />
+    <title>Архив статей</title>
+</head>
+
+<body class="archive">
+
+    <header class="header">
+        <img src="../static/1-4.png" alt="image" class="image">
+    </header>
+
+    <main class="archive">
+        <section class="main-post">
+
+            <h1 class="post-title">{{ post.title }}</h1>
+
+            <div class="post-about">
+
+                <div class="about-author">
+                    {{ post.author.username }}
+                </div>
+
+                <div class="about-date">
+                    {{ post.created_date }}
+                </div>
+
+            </div>
+
+            <div class="post-text">
+                <p class="text-article">{{ post.get_excerpt }}</p>
+            </div>
+
+        </section>
+
+        {% for post in posts %}
+        <section class="main-post">
+
+            <h1 class="post-title">
+                <a href="article/{{post.id}}">{{ post.title }}</a>
+            </h1>
+
+            <div class="post-about">
+
+                <div class="about-author">
+                    {{ post.author.username }}
+                </div>
+
+                <div class="about-date">
+                    {{ post.created_date }}
+                </div>
+
+            </div>
+
+            <div class="post-text">
+                <p class="text-article">{{ post.get_excerpt }}</p>
+            </div>
+
+        </section>
+        {% endfor %}
+    </main>
+
+    <footer class="logout">
+        <a href="../logout/" style="text-decoration: none;" >Выход из аккаунта!</a>
+    </footer>
+</body>
+
+</html>
